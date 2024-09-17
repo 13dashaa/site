@@ -1,0 +1,30 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Добавление заметки{% endblock %}
+
+
+{% block urls %}
+        <ul>
+            <a href ="{% url 'home' %}"><li><i class="fa-solid fa-house"></i> Главная</li></a>
+            <a href ="{% url 'articles_home' %}"><li><i class="fa-solid fa-book"></i> Статьи</li></a>
+            <a href = "{% url 'notes_home'%}"><li><i class="fa-solid fa-clipboard"></i> Заметки</li></a>
+        </ul>
+
+{% endblock %}
+{% block content %}
+    <div class="features">
+        <div class="heder_add">
+            <h1>Добавление заметки</h1>
+        </div>
+        <form method="post">
+            {% csrf_token %}
+            {{form.category}}<br>
+            {{form.sub_category}}<br>
+            {{form.full_text}}<br>
+            {{form.date}}<br>
+            {{form.photo}}<br>
+            <span>{{error}}</span>
+            <button class="btn btn-success" type="submit">добавить заметку</button>
+        </form>
+    </div>
+{% endblock %}

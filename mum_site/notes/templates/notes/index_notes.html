@@ -1,0 +1,38 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}{{title}}{% endblock %}
+
+{% block urls %}
+        <ul>
+            <a href ="{% url 'home' %}"><li><i class="fa-solid fa-house"></i> Главная</li></a>
+            <a href ="{% url 'articles_home' %}"><li><i class="fa-solid fa-book"></i> Статьи</li></a>
+            <a href = "{% url 'notes_home'%}"><li><i class="fa-solid fa-clipboard"></i> Заметки</li></a>
+            <a href="{% url 'create_note' %}"><li><button class="btn btn-secondary">Добавить заметку</button></li></a>
+        </ul>
+
+{% endblock %}
+{% block content %}
+    <div class="features">
+        <div class="heder">
+        <h1>Заметки</h1>
+        <p>замечай</p>
+        </div>
+        {% if notes %}
+        <div class="content">
+            {% for el in notes %}
+                <div class="alert alert-warning">
+                    <h3>{{ el.category }} </h3>
+                    <p>{{el.sub_category}}</p>
+                    <a href="{% url 'notes-detail' el.id %}" class="btn btn-warning">Читать</a>
+                </div>
+
+            {% endfor %}
+            </div>
+        {% else %}
+            <p>У вас нет записей!Добавьте что-нибудь!!!</p>
+        <a href="{% url 'create_note' %}"><button class="btn btn-secondary">Добавить заметку</button></a>
+        {% endif %}
+
+
+    </div>
+{% endblock %}

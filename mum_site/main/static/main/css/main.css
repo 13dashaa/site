@@ -1,0 +1,109 @@
+body{
+    background-color: #ffffff !important;
+    
+    max-width: 1080px;
+}
+
+aside{
+    
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    float: left;
+    /*max-width: 13%;*/
+    background: #83a873;
+    
+
+    color: #fff;
+    border-right: 5px solid #6a8e5b;
+}
+
+aside img{
+    max-width: 100%;
+    float: right;
+    border: white;
+}
+
+aside h3{
+    margin-top: 50px;
+    font-size: 28px;
+}
+
+aside ul{ 
+    list-style: none;
+    padding-left: 15px;}
+aside ul li{
+   text-decoration: none;
+   color: #fff;
+   display: block;
+   margin-top: 20px;
+   transition: transform .6s ease;
+
+}
+aside a{text-decoration: none;
+}
+
+aside ul li:hover, aside ul a:hover{
+color: #0d2440;
+text-decoration: none;
+transform: scale(1.05);
+
+}
+
+main .features{
+   margin-left: 160px;
+   display: block;
+   float: left;
+   color: #536b48;
+   margin-top: 15px;
+   padding-left: 10px;
+   text-align: left;
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   width: 87%;
+}
+main .features .heder{
+    margin-left: 50px;
+    max-width: 400px;
+    /*text-align: center;*/
+}
+main .features .heder_add{
+    margin-left: 50px;
+    max-width: 200px;
+    text-align: center;
+}
+main .content{
+    margin-left: 85px;
+    width: 1250px;
+}
+.alert-warning {
+    background: #a87383;
+   /*float: left;*/
+   display: inline-block;
+   clear: both;
+   width: 300px;
+   margin: 50px;
+   text-align: center;
+}
+.btn{
+   background:#ffc107 !important;
+   border-color: burlywood !important;
+   max-height: 60px;
+   max-width: 100px;
+   text-align: center;
+   font-size: 15px;
+}
+.features > p, .features > .btn-secondary{
+    margin-left: 50px;
+}
+.features > a .btn-secondary{
+    margin-left: 50px;
+   background: #83a873 !important;
+   border-color:  #6a8e5b !important;
+
+}
+form{
+
+   margin-left: 32%;
+   margin-top: 30px;
+   max-width: 500px;
+}

@@ -1,0 +1,17 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}{{ article.category }}{% endblock %}
+
+
+{% block content %}
+    <div class="features">
+        <h1>{{ article.category }}</h1>
+        <p>{{article.sub_category}}</p>
+        <p>{{article.title}}</p>
+        <a href = "{{article.url}}">перейти</a>
+
+
+
+
+    </div>
+{% endblock %}

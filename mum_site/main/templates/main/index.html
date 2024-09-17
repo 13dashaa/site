@@ -1,0 +1,23 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Сливочник{% endblock %}
+
+{% block urls %}
+        <ul>
+            <a href ="{% url 'home' %}"><li><i class="fa-solid fa-house"></i> Главная</li></a>
+            <a href = "{% url 'articles_home'%}"><li><i class="fa-solid fa-book"></i> Статьи</li></a>
+            <a href = "{% url 'notes_home'%}"><li><i class="fa-solid fa-clipboard"></i> Заметки</li></a>
+            <a href="{% url 'create_note' %}"><li><button class="btn btn-secondary">Добавить заметку</button></li></a>
+            <a href="{% url 'create_article' %}"><li><button class="btn btn-secondary">Добавить статью</button></li></a>
+        </ul>
+{% endblock %}
+{% block content %}
+    <div class="features">
+        <div class="heder">
+        <h1>Сливочник</h1>
+        <p>Заметки про сад и огород. Пользуйтесь, а то прополите и не заметите🙃</p>
+        </div>
+
+
+    </div>
+{% endblock %}

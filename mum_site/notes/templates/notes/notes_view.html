@@ -1,0 +1,15 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}{{ note.category }}{% endblock %}
+
+
+{% block content %}
+    <div class="features">
+        <h1>{{ note.category }}</h1>
+        <p>{{note.date}}</p>
+        <p>{{note.full_text}}</p>
+
+
+
+    </div>
+{% endblock %}

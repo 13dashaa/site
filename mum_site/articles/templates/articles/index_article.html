@@ -1,0 +1,38 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Статьи{% endblock %}
+
+{% block urls %}
+        <ul>
+            <a href ="{% url 'home' %}"><li><i class="fa-solid fa-house"></i> Главная</li></a>
+            <a href ="{% url 'articles_home' %}"><li><i class="fa-solid fa-book"></i> Статьи</li></a>
+            <a href = "{% url 'notes_home'%}"><li><i class="fa-solid fa-clipboard"></i> Заметки</li></a>
+
+            <a href="{% url 'create_article' %}"><li><button class="btn btn-secondary">Добавить статью</button></li></a>
+        </ul>
+
+{% endblock %}
+{% block content %}
+    <div class="features">
+        <div class="heder">
+        <h1>Статьи</h1>
+        <p>Сначала читай как - потом обрезай! </p>
+        </div>
+        {% if articles %}
+        <div class="content">
+            {% for el in articles %}
+                <div class="alert alert-warning">
+                    <h3>{{ el.category }} </h3>
+                    <p>{{el.sub_category}}</p>
+                    <p>{{el.title}}</p>
+                    <a href = "{{el.url}}" class="btn btn-warning">перейти</a>
+                </div>
+            {% endfor %}
+        </div>
+        {% else %}
+         <p>У вас нет записей! Добавьте что-нибудь!!!</p>
+        <a href="{% url 'create_article' %}"><button class="btn btn-secondary">Добавить статью</button></a>
+        {% endif %}
+
+    </div>
+{% endblock %}

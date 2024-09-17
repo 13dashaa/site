@@ -1,0 +1,31 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Добавление статьи{% endblock %}
+
+{% block urls %}
+        <ul>
+            <a href ="{% url 'home' %}"><li><i class="fa-solid fa-house"></i> Главная</li></a>
+            <a href ="{% url 'articles_home' %}"><li><i class="fa-solid fa-book"></i> Статьи</li></a>
+            <a href = "{% url 'notes_home'%}"><li><i class="fa-solid fa-clipboard"></i> Заметки</li></a>
+
+        </ul>
+
+{% endblock %}
+{% block content %}
+    <div class="features">
+        <div class="heder_add">
+            <h1>Добавление статьи</h1>
+        </div>
+        <form method="post">
+            {% csrf_token %}
+            {{form.category}}<br>
+            {{form.sub_category}}<br>
+            {{form.title}}<br>
+            {{form.url}}<br>
+            {{form.date}}<br>
+
+            <span>{{error}}</span>
+            <button class="btn btn-success" type="submit">добавить статью</button>
+        </form>
+    </div>
+{% endblock %}
